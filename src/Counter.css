@@ -1,0 +1,17 @@
+.count {
+  margin: 20px;
+  color: rgb(17, 87, 87);
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.button {
+  cursor: pointer;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: #d6d5d5;
+}
