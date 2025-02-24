@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-
+import "./TaskManagement.css";
 // Develop a React Task Management Application where users can create, read, update, and delete tasks with properties like title, description, dueDate, and completion status.
 
 function TaskManagement() {
-  const [task, setTask] = useState({ title: "", description: "", dueDate: "" });
+  const [task, setTask] = useState({
+    title: "",
+    description: "",
+    dueDate: "",
+    completed: false,
+  });
   const [tasks, setTasks] = useState([]);
   const [edit, setEdit] = useState(null);
 
@@ -22,6 +27,14 @@ function TaskManagement() {
       setTasks([...tasks, { ...task, id: Date.now(), completed: false }]);
     }
     setTask({ title: "", description: "", dueDate: "" });
+  };
+
+  const markTask = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
   };
 
   const DeleteTask = (id) => {
@@ -61,17 +74,31 @@ function TaskManagement() {
           onChange={handleChange}
         />
         <br />
-        <button type="Submit">{edit ? "Update" : "Create"}</button>
+        <button className="button" type="Submit">
+          {edit ? "Update" : "Create"}
+        </button>
       </form>
       <ul>
         {tasks.map((t) => (
           <li key={t.id}>
-            <h5>{t.title}</h5> - {t.description} (Due:{" "}
-            {t.dueDate || "No Due Date"})
+            <p>{t.title}</p>{" "}
+            <p>
+              - {t.description} (Due: {t.dueDate || "No Due Date"})
+            </p>
             <br />
             {/* {t.title} {t.description} ({t.dueDate}) */}
-            <button onClick={() => UpdateTask(t)}>Edit</button>
-            <button onClick={() => DeleteTask(t.id)}>Delete</button>
+            <div className="buttons">
+              <button className="button" onClick={() => UpdateTask(t)}>
+                Edit
+              </button>
+              <button className="button" onClick={() => DeleteTask(t.id)}>
+                Delete
+              </button>
+              <button className="button" onClick={() => markTask(t.id)}>
+                {t.completed ? "Mark Incomplete" : "Mark Complete"}
+              </button>
+              <span>{t.completed ? "✔️ Completed" : ""}</span>
+            </div>
           </li>
         ))}
       </ul>
