@@ -4,7 +4,7 @@ const GroupList = () => {
   const groupMembers = ["Abebe", "Daniel", "Rediet", "Biruk"];
   return (
     <div>
-      <h2>Welcome to the Group List</h2>
+      {/* <h2>Welcome to the Group List</h2> */}
       <h2>Group Members</h2>
       <ul>
         {/* <li>{groupMembers[0]}</li>
