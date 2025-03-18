@@ -3,6 +3,7 @@ import GroupList from "./component/GroupList";
 import UserCard from "./component/UserCard";
 import Counter from "./component/Counter";
 import TaskManagement from "./component/TaskManagement";
+import LiveSearch from "./component/LiveSearch";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <UserCard name="Abebe Biru" email="abebe.biru@example.com" age={34} />
       <Counter />
       <TaskManagement />
+      <LiveSearch />
     </div>
   );
 }
