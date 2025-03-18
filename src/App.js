@@ -1,13 +1,15 @@
 import React from "react";
+import "./App.css";
 import GroupList from "./component/GroupList";
 import UserCard from "./component/UserCard";
 import Counter from "./component/Counter";
 import TaskManagement from "./component/TaskManagement";
 import LiveSearch from "./component/LiveSearch";
+import CharacterCounter from "./component/CharacterCounter";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <GroupList />
       <h2>User Card</h2>
       <UserCard
@@ -20,6 +22,7 @@ function App() {
       <Counter />
       <TaskManagement />
       <LiveSearch />
+      <CharacterCounter />
     </div>
   );
 }

@@ -3,10 +3,11 @@
   color: rgb(17, 87, 87);
 }
 
-.buttons {
+/* .buttons {
   display: flex;
+
   gap: 20px;
-}
+} */
 
 .button {
   cursor: pointer;
