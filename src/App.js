@@ -6,6 +6,7 @@ import Counter from "./component/Counter";
 import TaskManagement from "./component/TaskManagement";
 import LiveSearch from "./component/LiveSearch";
 import CharacterCounter from "./component/CharacterCounter";
+import FetchMovie from "./component/FetchMovie";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <TaskManagement />
       <LiveSearch />
       <CharacterCounter />
+      <FetchMovie />
     </div>
   );
 }

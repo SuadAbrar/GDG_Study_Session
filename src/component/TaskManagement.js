@@ -59,8 +59,7 @@ function TaskManagement() {
           required
         />
         <br />
-        <input
-          type="text"
+        <textarea
           name="description"
           value={task.description}
           onChange={handleChange}
