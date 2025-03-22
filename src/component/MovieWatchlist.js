@@ -7,12 +7,16 @@ const MovieWatchlist = () => {
   const [movies, setMovies] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
 
+  // useEffect(() => {
+  //   fetch(API)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setMovies(data.results);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch(API)
-      .then((response) => response.json())
-      .then((data) => {
-        setMovies(data.results);
-      });
+    axios.get(API).then((response) => setMovies(response.data.results));
   }, []);
 
   const addToWatchlist = (movie) => {
